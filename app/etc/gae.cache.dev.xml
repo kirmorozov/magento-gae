@@ -1,0 +1,7 @@
+<config>
+    <global>
+        <cache>
+            <backend>Zend_Cache_Backend_BlackHole</backend>
+        </cache>
+    </global>
+</config>

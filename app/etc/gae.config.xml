@@ -1,0 +1,12 @@
+<config>
+    <global>
+        <session_save><![CDATA[user]]></session_save>
+        <models>
+            <core>
+                <rewrite>
+                    <design_package>GEA_Core_Model_Design_Package</design_package>
+                </rewrite>
+            </core>
+        </models>
+    </global>
+</config>
