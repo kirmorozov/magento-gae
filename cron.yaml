@@ -1,0 +1,4 @@
+cron:
+- description: Magento cron tasks
+  url: /cron.php
+  schedule: every 1 minutes
