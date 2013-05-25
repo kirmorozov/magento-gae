@@ -164,7 +164,7 @@ class GAE_Core_Model_Config_Options extends Varien_Object
     }
 }
 
-class GEA_Core_Model_Design_Package extends Mage_Core_Model_Design_Package
+class GAE_Core_Model_Design_Package extends Mage_Core_Model_Design_Package
 {
     /**
      * Disabling failover because materialization is provided

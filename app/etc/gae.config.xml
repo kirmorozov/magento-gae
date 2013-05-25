@@ -4,7 +4,7 @@
         <models>
             <core>
                 <rewrite>
-                    <design_package>GEA_Core_Model_Design_Package</design_package>
+                    <design_package>GAE_Core_Model_Design_Package</design_package>
                 </rewrite>
             </core>
         </models>
