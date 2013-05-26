@@ -1,5 +1,5 @@
 application: magento-gae
-version: 1
+version: 2
 runtime: php
 api_version: 1
 
@@ -11,6 +11,14 @@ handlers:
 
 - url: /js
   static_dir: js
+  expiration: 30d
+
+- url: /errors/default/images
+  static_dir: errors/default/images
+  expiration: 30d
+
+- url: /errors/default/css
+  static_dir: errors/default/css
   expiration: 30d
 
 - url: /favicon.ico

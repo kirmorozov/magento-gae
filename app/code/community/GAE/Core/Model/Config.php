@@ -183,3 +183,54 @@ class GAE_Core_Model_Design_Package extends Mage_Core_Model_Design_Package
 
 }
 
+
+/**
+ *  Replacements for iconv functions for GAE
+ */
+if (!extension_loaded('iconv')) {
+    define('ICONV_IMPL', 'none');
+    function iconv_get_encoding()
+    {
+        return 'UTF-8';
+    }
+
+    function iconv_set_encoding()
+    {
+    }
+
+    function iconv_strlen($str, $charset = 'ini_get("iconv.internal_encoding")')
+    {
+        return strlen($str);
+    }
+
+    function iconv_substr($str, $offset, $length = null, $charset = 'ini_get("iconv.internal_encoding")')
+    {
+        return substr($str, $offset, $length);
+    }
+
+    function iconv_strpos($haystack, $needle, $offset = 0, $charset = 'ini_get("iconv.internal_encoding")')
+    {
+        return strpos($haystack, $needle, $offset);
+    }
+
+    function iconv_strrpos($haystack, $needle, $offset = 0, $charset = 'ini_get("iconv.internal_encoding")')
+    {
+        return strrpos($haystack, $needle, $offset);
+    }
+
+    function iconv($in_charset, $out_charset, $str)
+    {
+        return $str;
+    }
+
+}
+
+// Moving Zend Locale cache to memcached
+Zend_Locale_Data::setCache(
+    Zend_Cache::factory(
+        'Core',
+        'Memcached',
+        array('automatic_serialization' => true),
+        array()
+    )
+);

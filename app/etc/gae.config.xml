@@ -7,6 +7,30 @@
                     <design_package>GAE_Core_Model_Design_Package</design_package>
                 </rewrite>
             </core>
+            <index>
+                <rewrite>
+                    <process>GAE_Indexer_Model_Process</process>
+                </rewrite>
+            </index>
+            <adminnotification>
+                <rewrite>
+                    <observer>GAE_AdminNotification_Model_Observer</observer>
+                </rewrite>
+            </adminnotification>
         </models>
+        <blocks>
+            <adminhtml>
+                <rewrite>
+                    <notification_security>GAE_Adminhtml_Block_Notification_Security</notification_security>
+                </rewrite>
+            </adminhtml>
+        </blocks>
     </global>
+    <default>
+        <dev>
+            <log>
+                <active>1</active>
+            </log>
+        </dev>
+    </default>
 </config>

@@ -1,6 +1,7 @@
 <config>
     <global>
         <cache>
+            <prefix>GAE_</prefix>
             <backend>memcached</backend>
             <!-- apc / memcached / xcache / empty=file -->
             <slow_backend>database</slow_backend>
