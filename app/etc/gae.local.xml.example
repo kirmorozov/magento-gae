@@ -52,7 +52,7 @@
                 </connection>
             </default_setup>
         </resources>
-        <session_save><![CDATA[files]]></session_save>
+        <!--<session_save><![CDATA[files]]></session_save>-->
     </global>
     <admin>
         <routers>

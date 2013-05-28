@@ -181,13 +181,22 @@ class GAE_Core_Model_Design_Package extends Mage_Core_Model_Design_Package
         return $url;
     }
 
-}
+    /**
+     * mkdir is not wrapped
+     *
+     * @return bool
+     */
+    public function cleanMergedJsCss()
+    {
+        return true;
+    }
 
+}
 
 /**
  *  Replacements for iconv functions for GAE
  */
-if (!extension_loaded('iconv')) {
+if (!extension_loaded('iconv') && !function_exists('iconv')) {
     define('ICONV_IMPL', 'none');
     function iconv_get_encoding()
     {
@@ -226,11 +235,13 @@ if (!extension_loaded('iconv')) {
 }
 
 // Moving Zend Locale cache to memcached
-Zend_Locale_Data::setCache(
-    Zend_Cache::factory(
-        'Core',
-        'Memcached',
-        array('automatic_serialization' => true),
-        array()
-    )
-);
+if (!Zend_Locale_Data::hasCache()) {
+    Zend_Locale_Data::setCache(
+        Zend_Cache::factory(
+            'Core',
+            'Libmemcached',
+            array('automatic_serialization' => true),
+            array()
+        )
+    );
+}

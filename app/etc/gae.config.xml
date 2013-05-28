@@ -17,6 +17,11 @@
                     <observer>GAE_AdminNotification_Model_Observer</observer>
                 </rewrite>
             </adminnotification>
+            <catalog>
+                <rewrite>
+                    <product_image>GAE_Catalog_Model_Product_Image</product_image>
+                </rewrite>
+            </catalog>
         </models>
         <blocks>
             <adminhtml>
