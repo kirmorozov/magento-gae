@@ -1,9 +1,7 @@
-magento-gae
+Magento-GAE - Magento in GAE Compatibility
 ===========
 
-#### Magento Google App Engine Compatibility
-
-Goal of this extension is to provide compatibility wiTH GAE.
+Goal of this extension is to provide compatibility with Google App Engine.
 
 Working version is available at: http://magento-gae.appspot.com/
 
@@ -13,6 +11,7 @@ Working version is available at: http://magento-gae.appspot.com/
 - file_exists returns false if file is in skin or gs.(gs is IO wrapper at GAE to access media storage)
 - glob function returns false
 - mkdir function is not covered in wrapper for gs.
+- Write access to application storage is forbidden(no log file, no lock files)
 
 #### How to deploy (TODO)
 ##### With Composer
@@ -23,7 +22,7 @@ Feel free to contact with me and/or provide pull reqests.
 
 ##### License
 
-    Magento-GAE - extension which provides compatibility with Google App Engine.
+    Magento-GAE - Magento in GAE Compatibility
     Copyright (C) 2013  Kirill Morozov <kir.morozov@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
