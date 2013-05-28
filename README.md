@@ -1,7 +1,7 @@
 Magento-GAE - Magento in GAE Compatibility
 ===========
 
-Goal of this extension is to provide compatibility with Google App Engine.
+### Goal of this extension is to provide compatibility with Google App Engine.
 
 Working version is available at: http://magento-gae.appspot.com/
 
