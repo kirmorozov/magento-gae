@@ -1,0 +1,13 @@
+<config>
+    <materialize>
+        <frontend>
+            <default>base/default,default/default</default>
+        </frontend>
+        <install>
+            <default>default/default</default>
+        </install>
+        <adminhtml>
+            <default>default/default</default>
+        </adminhtml>
+    </materialize>
+</config>

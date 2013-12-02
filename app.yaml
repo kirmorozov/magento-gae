@@ -1,79 +1,85 @@
 application: magento-gae
-version: 2
+version: 1
 runtime: php
 api_version: 1
+threadsafe: yes
 
 handlers:
 - url: /skin
-  static_dir: gae/material_skin
-#  application_readable: true
+  static_dir: var/skin
+# application_readable: true
   expiration: 30d
 
 - url: /js
-  static_dir: js
+  static_dir: magento/js
   expiration: 30d
 
 - url: /errors/default/images
-  static_dir: errors/default/images
+  static_dir: magento/errors/default/images
   expiration: 30d
 
 - url: /errors/default/css
-  static_dir: errors/default/css
+  static_dir: magento/errors/default/css
   expiration: 30d
 
-- url: /favicon.ico
-  static_files: static/favicon.ico
-  upload: static/favicon.ico
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
   expiration: 30d
+
+- url: /materialize.php
+  script: materialize.php
 
 - url: /cron.php
-  script: gae/cron.php
+  script: cron.php
 
 - url: .*
-  script: gae/index.php
+  script: index.php
 
 
 skip_files:
 # Skins are served separately
-- ^skin.*
+- ^magento/skin.*
 # Useless directories for GAE
-- ^var.*
-- ^media.*
-- ^downloader.*
-- ^pkginfo.*
-- ^shell.*
-- ^lib/flex/.*
+- ^magento/var.*
+- ^magento/media.*
+- ^magento/downloader.*
+- ^magento/pkginfo.*
+- ^magento/shell.*
+- ^magento/lib/flex/.*
 # Unused Modules
-- ^lib/Zend/Amf.*
-- ^lib/Zend/Application.*
-- ^lib/Zend/Auth.*
-- ^lib/Zend/Barcode.*
-- ^lib/Zend/Cloud.*
-- ^lib/Zend/CodeGenerator.*
-- ^lib/Zend/Dojo.*
-- ^lib/Zend/Form.*
-- ^lib/Zend/Ldap.*
-- ^lib/Zend/InfoCard.*
-- ^lib/Zend/Queue.*
-- ^lib/Zend/Search.*
-- ^lib/Zend/Service.*
-- ^lib/Zend/Test.*
-- ^lib/Zend/Tool.*
-- ^lib/Zend/View.*
+- ^magento/lib/Zend/Amf.*
+- ^magento/lib/Zend/Application.*
+- ^magento/lib/Zend/Auth.*
+- ^magento/lib/Zend/Barcode.*
+- ^magento/lib/Zend/Cloud.*
+- ^magento/lib/Zend/CodeGenerator.*
+- ^magento/lib/Zend/Dojo.*
+- ^magento/lib/Zend/Form.*
+- ^magento/lib/Zend/Ldap.*
+- ^magento/lib/Zend/InfoCard.*
+- ^magento/lib/Zend/Queue.*
+- ^magento/lib/Zend/Search.*
+- ^magento/lib/Zend/Service.*
+- ^magento/lib/Zend/Test.*
+- ^magento/lib/Zend/Tool.*
+- ^magento/lib/Zend/View.*
 # Google Base
-- ^lib/Zend/Gdata.*
+- ^magento/lib/Zend/Gdata.*
 #Connect And Backup
-- ^lib/Mage.*
-- ^app/code/core/Mage/Connect.*
-- ^app/code/core/Mage/Backup.*
+- ^magento/lib/Mage.*
+- ^magento/app/code/core/Mage/Connect.*
+- ^magento/app/code/core/Mage/Backup.*
 #Google checkout
-- ^lib/googlecheckout.*
-- ^app/code/core/Mage/GoogleCheckout.*
+- ^magento/lib/googlecheckout.*
+- ^magento/app/code/core/Mage/GoogleCheckout.*
 #MoneyBookers
-- ^app/code/community/Phoenix.*
+- ^magento/app/code/community/Phoenix.*
 #Mage Compiler
-- ^app/code/core/Mage/Compiler.*
+- ^magento/app/code/core/Mage/Compiler.*
 #API
-- ^app/code/core/Mage/Api.*
-- ^app/code/core/Mage/Api2.*
+- ^magento/app/code/core/Mage/Api.*
+- ^magento/app/code/core/Mage/Api2.*
+# git
+- ^magento/\.git/.*
 - ^\.git/.*

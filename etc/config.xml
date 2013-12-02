@@ -1,12 +1,18 @@
 <config>
     <global>
-        <session_save><![CDATA[user]]></session_save>
         <models>
             <core>
                 <rewrite>
                     <design_package>GAE_Core_Model_Design_Package</design_package>
                 </rewrite>
             </core>
+            <install>
+                <rewrite>
+                    <installer_env>GAE_Core_Model_Installer_Null</installer_env>
+                    <installer_filesystem>GAE_Core_Model_Installer_Null</installer_filesystem>
+                </rewrite>
+            </install>
+
             <index>
                 <rewrite>
                     <process>GAE_Indexer_Model_Process</process>
@@ -17,11 +23,6 @@
                     <observer>GAE_AdminNotification_Model_Observer</observer>
                 </rewrite>
             </adminnotification>
-            <catalog>
-                <rewrite>
-                    <product_image>GAE_Catalog_Model_Product_Image</product_image>
-                </rewrite>
-            </catalog>
         </models>
         <blocks>
             <adminhtml>
@@ -29,7 +30,17 @@
                     <notification_security>GAE_Adminhtml_Block_Notification_Security</notification_security>
                 </rewrite>
             </adminhtml>
+            <install>
+                <rewrite>
+                    <db_type_mysql4>GAE_Core_Block_Db_Type_CloudSql</db_type_mysql4>
+                </rewrite>
+            </install>
         </blocks>
+        <log>
+            <core>
+                <writer_model>Zend_Log_Writer_Syslog</writer_model>
+            </core>
+        </log>
     </global>
     <default>
         <dev>

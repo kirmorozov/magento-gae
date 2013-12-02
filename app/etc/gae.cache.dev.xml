@@ -1,7 +1,0 @@
-<config>
-    <global>
-        <cache>
-            <backend>Zend_Cache_Backend_Libmemcached</backend>
-        </cache>
-    </global>
-</config>
