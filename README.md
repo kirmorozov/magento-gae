@@ -1,3 +1,9 @@
+Project is abandoned
+==========
+Q: Why?
+A: It takes a lot of time to read Magento 1.X code to inject overrides. And Magento 2 is about to come out.
+I achieved automatic scaling with AWS.
+
 Magento-GAE - Magento in GAE Compatibility
 ===========
 
