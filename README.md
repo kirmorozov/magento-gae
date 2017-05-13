@@ -1,23 +1,12 @@
-Project is abandoned
-==========
-Q: Why?
-A: It takes a lot of time to read Magento 1.X code to inject overrides. And Magento 2 is about to come out.
-I achieved automatic scaling with AWS.
-
 Magento-GAE - Magento in GAE Compatibility
 ===========
 
 ### Goal of this extension is to provide compatibility with Google App Engine.
-
+Project is work in progress for Magento 2.X and PHP 7.1
 Working version is available at: http://magento-gae.appspot.com/
 
 #### Known limitations
-- Amount of files is limited to 10000 (Some files were put to skiplist)
-- Skin files donot exist in the scope of application
-- file_exists returns false if file is in skin or gs.(gs is IO wrapper at GAE to access media storage)
-- glob function returns false
-- mkdir function is not covered in wrapper for gs.
-- Write access to application storage is forbidden(no log file, no lock files)
+ to be discoverred
 
 #### How to deploy (TODO)
 ##### With Composer
