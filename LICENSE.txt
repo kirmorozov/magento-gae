@@ -1,4 +1,5 @@
 MIT License
+Magento-GAE - Magento in GAE Compatibility
 
 Copyright (c) 2017 Kirill Morozov <kir.morozov@gmail.com>
 
