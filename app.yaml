@@ -5,4 +5,11 @@ manual_scaling:
   instances: 1
 
 runtime_config:
-  document_root: ./
+  document_root: ./pub/
+
+env_variables:
+  MAGENTO_MODE: production
+  D
+
+skip_files:
+ - vendor/

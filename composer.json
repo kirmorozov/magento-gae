@@ -1,12 +1,13 @@
 {
-  "name": "magento/project-community-edition",
-  "description": "eCommerce Platform for Growth (Community Edition)",
+  "name": "morozov/appengine-magento-project",
+  "license": "MIT",
   "type": "project",
-  "version": "2.0.2",
-  "license": [
-    "OSL-3.0",
-    "AFL-3.0"
-  ],
+  "description": "eCommerce Platform for Growth (Community Edition)",
+  "keywords": ["google", "appengine", "magento2", "magento"],
+  "homepage": "https://github.com/kirmorozov/magento-gae",
+  "support": {
+    "issues": "https://github.com/kirmorozov/magento-gae/issues"
+  },
   "repositories": [
     {
       "type": "composer",
@@ -15,6 +16,10 @@
   ],
   "require": {
     "php": "7.0.*",
+    "ext-gd":"*",
+    "ext-imagick":"*",
+    "ext-intl":"*",
+    "ext-xsl":"*",
     "magento/product-community-edition": "2.1.7",
     "composer/composer": "@alpha"
   },
@@ -41,6 +46,14 @@
     },
     "files": [
       "app/etc/NonComposerComponentRegistration.php"
+    ]
+  },
+  "scripts": {
+    "post-deploy-cmd": [
+      "chmod -R 777 ./var/ ./pub/media/",
+      "sh gae/01-configure_nginx.sh",
+      "sh gae/02-install_if_new.sh",
+      "sh gae/03-deploy.sh"
     ]
   },
   "autoload-dev": {
